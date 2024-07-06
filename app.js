@@ -10,16 +10,17 @@
             this.imagePath = `./images/${species}.png.toLowerCase()`;
         }
     
-    
     // Create Dino Constructor
-
-    function Dino (
+    function Dino (species,
+        weight,
+        height,
+        diet,
         where,
         when,
         fact,
         human
     ) {
-        Entity.call(this, species, height, weight, diet)
+        Entity.call(this, species, weight, height, diet)
         this.where = where;
         this.when = when;
         this.fact = fact;
@@ -41,10 +42,8 @@
         return data;
     }
 
-
     // Create Dino Objects
     // const dino = new Dino();
-
     // Create Human Constructor
     function Human (
         name,
@@ -59,10 +58,6 @@
     // Set Human Prototype
     Human.prototype = Object.create(Entity.prototype);
     Human.prototype.constructor = Human;
-    
-
-
-    
 
     // Use IIFE to get human data from form
     const humanObject = () => {
@@ -81,7 +76,6 @@
         })();
     };
 
-
     // Create Dino Compare Method 1 - HEIGHT
     // NOTE: Weight in JSON file is in lbs, height in inches. 
     const heightCompare = function(heightHuman, dino) {
@@ -94,7 +88,6 @@
 
         return diffText;
     };
-
     
     // Create Dino Compare Method 2 - WEIGHT
     // NOTE: Weight in JSON file is in lbs, height in inches.
@@ -110,7 +103,6 @@
         return diffText;
     };
 
-    
     // Create Dino Compare Method 3
     // NOTE: Weight in JSON file is in lbs, height in inches.
 
@@ -146,12 +138,6 @@
 
         return facts;
     };
-
-
-    // Generate Tiles for each Dino in Array
-    // const generateTile = (dino_array) => {
-    //     let update_dino_array = [];
-    // };
 
     function errorHandling(err) {
         console.log(err);
@@ -242,6 +228,5 @@
         document.querySelector('#dino-compare').classList.add("hidden");
     }
 
-    
     // On button click, prepare and display infographic
     document.querySelector('#btn').addEventListener('click', buttonClick);
