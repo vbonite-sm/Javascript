@@ -194,7 +194,7 @@
         });
 
         const generateTile = function(human, dino) {
-            let updatedArrays [];
+            let updatedArrays = [];
             updatedArrays = dino;
             updatedArrays.splice(4,0, human);
 
