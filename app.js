@@ -33,11 +33,6 @@
     const fetchDinoJson = async () => {
         const dino_json = await fetch("./dino.json");
         const data = await dino_json.json();
-        // const dino_array = data.Dinos.map(dino => {
-        //     let {species, weight, height, diet, where, when, fact} = dino;
-        //     return new Dino(species, weight, height, diet, where, when, fact)
-        // });
-        // generateTile(dino_array);
         return data;
     }
 
@@ -65,7 +60,7 @@
           const name = document.querySelector('[name="name"]').value || "Your name here!";
           const heightFeet = parseInt(document.querySelector('[name="feet"]').value) || 0;
           const heightInches = parseInt(document.querySelector('[name="inches"]').value) || 0;
-          const height = heightFeet * 12 + heightInches; //1 feet * 12 inches / 1feet =  inches
+          const height = heightFeet * 12 + heightInches;
           const weight = document.querySelector('[name="weight"]').value;
           const diet = document.querySelector('[name="diet"]').value.toLowerCase();
           
@@ -90,7 +85,6 @@
     
     // Create Dino Compare Method 2 - WEIGHT
     // NOTE: Weight in JSON file is in lbs, height in inches.
-
     const weightCompare = function(weightHuman, dino) {
         weightDino = dino.weight;
         let weightDiff = weightDino - weightHuman;
@@ -104,16 +98,14 @@
 
     // Create Dino Compare Method 3
     // NOTE: Weight in JSON file is in lbs, height in inches.
-
     const dietCompare = function(dietHuman, dino) {
         dietDino = dino.diet;
         
-        let diffText = (dietDino === dietHuman) ? `You and the ${dino.species} have the same diet`
+        let diffText = (dietDino.toLowerCase() === dietHuman.toLowerCase()) ? `You and the ${dino.species} have the same diet`
         : `You and the ${dino.species} have different diets. They are a ${dietDino}`;
     };
 
     // Dino Facts - Time Period
-
     const dinoFactWhen = function(dino) {
         let factText = `The ${dino.species} lived during the ${dino.when} period.`;
         return factText;
