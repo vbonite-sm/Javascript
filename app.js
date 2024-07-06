@@ -180,9 +180,13 @@
         });
 
         const generateTile = function(human, dino) {
+            console.log(human);
+            console.log(dino);
             let updatedArrays = [];
+            console.log(updatedArrays);
             updatedArrays = dino;
             updatedArrays.splice(4,0, human);
+            console.log(updatedArrays);
 
             let tilesArray = [];
             const dinoGrid = document.querySelector('#grid');
@@ -222,7 +226,7 @@
         };
 
         // Add tiles to DOM
-        generateTile(humanObject(), allDinoData);
+        generateTile(humanObject(), dinoArray);
 
         // Remove form from screen
         document.querySelector('#dino-compare').classList.add("hidden");
