@@ -45,8 +45,9 @@
         weight, 
         diet
     ) {
-        Entity.call(this, "human", height, weight, diet);
+        Entity.call(this, "human", weight, height, diet);
         this.name = name;
+        this.diet = diet;
     }
 
     // Set Human Prototype
