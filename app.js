@@ -7,7 +7,7 @@
             this.weight = weight;
             this.height = height;
             this.diet = diet;
-            this.imagePath = `./images/${species}.png`.toLowerCase();
+            this.imagePath = `./images/${species}.png.toLowerCase()`;
         }
     
     
