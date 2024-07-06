@@ -25,6 +25,7 @@
         this.where = where;
         this.when = when;
         this.fact = fact;
+        this.diet = diet;
     }
 
     // Set Dino Prototype
@@ -105,6 +106,7 @@
         
         let diffText = (dietDino.toLowerCase() === dietHuman.toLowerCase()) ? `You and the ${dino.species} have the same diet`
         : `You and the ${dino.species} have different diets. They are a ${dietDino}`;
+        return diffText;
     };
 
     // Dino Facts - Time Period
