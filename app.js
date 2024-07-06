@@ -234,13 +234,14 @@
                 dinoGrid.insertAdjacentHTML('beforeend', tilesArray);
             });
         };
+
+        // Add tiles to DOM
+        generateTile(humanObject(), allDinoData);
+
+        // Remove form from screen
+        document.querySelector('#dino-compare').classList.add("hidden");
     }
 
-    // Add tiles to DOM
-    generateTile(humanObject(), allDinoData);
-
-    // Remove form from screen
-    document.querySelector('#dino-compare').classList.add("hidden");
-
+    
     // On button click, prepare and display infographic
     document.querySelector('#btn').addEventListener('click', buttonClick);
