@@ -7,7 +7,7 @@
             this.weight = weight;
             this.height = height;
             this.diet = diet;
-            this.imagePath = `./images/${species}.png.toLowerCase()`;
+            this.imagePath = `./images/${species.toLowerCase()}.png`;
         }
     
     // Create Dino Constructor
@@ -29,7 +29,6 @@
     // Set Dino Prototype
     Dino.prototype = Object.create(Entity.prototype);
     Dino.prototype.constructor = Dino;
-    
 
     const fetchDinoJson = async () => {
         const dino_json = await fetch("./dino.json");
