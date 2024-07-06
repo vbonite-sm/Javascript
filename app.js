@@ -1,5 +1,6 @@
     // Global Constructor
-    function Entity (species,
+    function Entity (
+        species,
         weight,
         height,
         diet) {
@@ -11,14 +12,14 @@
         }
     
     // Create Dino Constructor
-    function Dino (species,
+    function Dino (
+        species,
         weight,
         height,
         diet,
         where,
         when,
-        fact,
-        human
+        fact
     ) {
         Entity.call(this, species, weight, height, diet)
         this.where = where;
@@ -41,8 +42,8 @@
     // Create Human Constructor
     function Human (
         name,
-        height,
-        weight, 
+        weight,
+        height, 
         diet
     ) {
         Entity.call(this, "human", weight, height, diet);
