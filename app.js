@@ -197,7 +197,6 @@
                         <div class="grid-item">
                             <h3>${updatedArray.name}</h3>
                             <img src="${updatedArray.imagePath}" alt="image of ${updatedArray.species}">
-                            <p>${updatedArray.fact}</p>
                         </div>
                         `;
                         break;
